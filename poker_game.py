@@ -12,8 +12,6 @@ import random
 def game( number_of_players ):
     names =[input( "Please enter your name: ") for i in range( number_of_players ) ]
     cards = [ "A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2" ] * 4
-    hand = {}
-    ordered_hand = {}
     values = {"2": 2, 
               "3": 3, 
               "4": 4, 
@@ -27,6 +25,9 @@ def game( number_of_players ):
               "Q": 12,
               "K": 13,
               "A": 14}
+    
+    hand = {}
+    ordered_hand = {}
     
     for name in names:
         hand[ name ] = []
@@ -62,5 +63,8 @@ def game( number_of_players ):
                 break
             break
     
-    print( "The winner is {}.".format( list( compare.keys()) [ 0 ] ) ) 
+    result = "The winner is {}.".format( list( compare.keys()) [ 0 ] )
 
+    return result
+
+game( 8 )
